@@ -91,44 +91,119 @@ int main() {
                         sign = 2;
                         whichTurn = 2;
                     }
-                } else { // Если знак выбран
+                } else if (sign == 1) { // Если знак выбран
                     if (event.mouseButton.x < width / 3 && event.mouseButton.y < height / 3) {
-                        std::cout << "1\n";
-                        field[0] = 1;
+                        if (field[0] == 0) {
+                            field[0] = 1;
+                            sign = 2;
+                        }
                     }
                     if (event.mouseButton.x > width / 3 && event.mouseButton.x < (width / 3) * 2 && event.mouseButton.y < height / 3) {
-                        std::cout << "2\n";
-                        field[1] = 1;
+                        if (field[1] == 0) {
+                            field[1] = 1;
+                            sign = 2;
+                        }
                     }
                     if (event.mouseButton.x > (width / 3) * 2 && event.mouseButton.y < height / 3) {
-                        std::cout << "3\n";
-                        field[2] = 1;
+                        if (field[2] == 0) {
+                            field[2] = 1;
+                            sign = 2;
+                        }
                     }
 
                     if (event.mouseButton.x < width / 3 && event.mouseButton.y > height / 3 && event.mouseButton.y < (height / 3) * 2) {
-                        std::cout << "4\n";
-                        field[3] = 1;
+                        if (field[3] == 0) {
+                            field[3] = 1;
+                            sign = 2;
+                        }
                     }
                     if (event.mouseButton.x > width / 3 && event.mouseButton.x < (width / 3) * 2 && event.mouseButton.y > height / 3 && event.mouseButton.y < (height / 3) * 2) {
-                        std::cout << "5\n";
-                        field[4] = 1;
+                        if (field[4] == 0) {
+                            field[4] = 1;
+                            sign = 2;
+                        }
                     }
                     if (event.mouseButton.x > (width / 3) * 2 && event.mouseButton.y > width / 3 && event.mouseButton.y < (width / 3) * 2) {
-                        std::cout << "6\n";
-                        field[5] = 1;
+                        if (field[5] == 0) {
+                            field[5] = 1;
+                            sign = 2;
+                        }
                     }
 
                     if (event.mouseButton.x < width / 3 && event.mouseButton.y > (height / 3) * 2) {
-                        std::cout << "7\n";
-                        field[6] = 1;
+                        if (field[6] == 0) {
+                            field[6] = 1;
+                            sign = 2;
+                        }
                     }
                     if (event.mouseButton.x > width / 3&& event.mouseButton.x < (width / 3) * 2 && event.mouseButton.y > (height / 3) * 2) {
-                        std::cout << "8\n";
-                        field[7] = 1;
+                        if (field[7] == 0) {
+                            field[7] = 1;
+                            sign = 2;
+                        }
                     }
                     if (event.mouseButton.x > (width / 3) * 2 && event.mouseButton.y > (height / 3) * 2) {
-                        std::cout << "9\n";
-                        field[8] = 1;
+                        if (field[8] == 0) {
+                            field[8] = 1;
+                            sign = 2;
+                        }
+                    }
+                } else if (sign == 2) { // Если знак выбран
+                    if (event.mouseButton.x < width / 3 && event.mouseButton.y < height / 3) {
+                        if (field[0] == 0) {
+                            field[0] = 2;
+                            sign = 1;
+                        }
+                    }
+                    if (event.mouseButton.x > width / 3 && event.mouseButton.x < (width / 3) * 2 && event.mouseButton.y < height / 3) {
+                        if (field[1] == 0) {
+                            field[1] = 2;
+                            sign = 1;
+                        }
+                    }
+                    if (event.mouseButton.x > (width / 3) * 2 && event.mouseButton.y < height / 3) {
+                        if (field[2] == 0) {
+                            field[2] = 2;
+                            sign = 1;
+                        }
+                    }
+
+                    if (event.mouseButton.x < width / 3 && event.mouseButton.y > height / 3 && event.mouseButton.y < (height / 3) * 2) {
+                        if (field[3] == 0) {
+                            field[3] = 2;
+                            sign = 1;
+                        }
+                    }
+                    if (event.mouseButton.x > width / 3 && event.mouseButton.x < (width / 3) * 2 && event.mouseButton.y > height / 3 && event.mouseButton.y < (height / 3) * 2) {
+                        if (field[4] == 0) {
+                            field[4] = 2;
+                            sign = 1;
+                        }
+                    }
+                    if (event.mouseButton.x > (width / 3) * 2 && event.mouseButton.y > width / 3 && event.mouseButton.y < (width / 3) * 2) {
+                        if (field[5] == 0) {
+                            field[5] = 2;
+                            sign = 1;
+                        }
+                    }
+
+                    if (event.mouseButton.x < width / 3 && event.mouseButton.y > (height / 3) * 2) {
+                        if (field[6] == 0) {
+                            field[6] = 2;
+                            sign = 1;
+                        }
+                    }
+                    if (event.mouseButton.x > width / 3&& event.mouseButton.x < (width / 3) * 2 && event.mouseButton.y > (height / 3) * 2) {
+                        if (field[7] == 0) {
+                            field[7] = 2;
+                            sign = 1;
+                        }
+                    }
+                    if (event.mouseButton.x > (width / 3) * 2 && event.mouseButton.y > (height / 3) * 2) {
+                        if (field[8] == 0) {
+                            field[8] = 2;
+                            sign = 1;
+                        }
                     }
                 }
             }
@@ -145,96 +220,96 @@ int main() {
             window.draw(line3);
             window.draw(line4);
 
-            if (sign == 1) {
-                if (field[0] > 0) {
-                    xSprite.setPosition(0, 0);
-                    window.draw(xSprite);
-                }
+            if (field[0] == 1) {
+                xSprite.setPosition(0, 0);
+                window.draw(xSprite);
+            }
 
-                if (field[1] > 0) {
-                    xSprite.setPosition(width / 3, 0);
-                    window.draw(xSprite);
-                }
+            if (field[1] == 1) {
+                xSprite.setPosition(width / 3, 0);
+                window.draw(xSprite);
+            }
 
-                if (field[2] > 0) {
-                    xSprite.setPosition((width / 3) * 2, 0);
-                    window.draw(xSprite);
-                }
+            if (field[2] == 1) {
+                xSprite.setPosition((width / 3) * 2, 0);
+                window.draw(xSprite);
+            }
 
-                if (field[3] > 0) {
-                    xSprite.setPosition(0, height / 3);
-                    window.draw(xSprite);
-                }
+            if (field[3] == 1) {
+                xSprite.setPosition(0, height / 3);
+                window.draw(xSprite);
+            }
 
-                if (field[4] > 0) {
-                    xSprite.setPosition(width / 3, height / 3);
-                    window.draw(xSprite);
-                }
+            if (field[4] == 1) {
+                xSprite.setPosition(width / 3, height / 3);
+                window.draw(xSprite);
+            }
 
-                if (field[5] > 0) {
-                    xSprite.setPosition((width / 3) * 2, height / 3);
-                    window.draw(xSprite);
-                }
+            if (field[5] == 1) {
+                xSprite.setPosition((width / 3) * 2, height / 3);
+                window.draw(xSprite);
+            }
 
-                if (field[6] > 0) {
-                    xSprite.setPosition(0, (height / 3) * 2);
-                    window.draw(xSprite);
-                }
+            if (field[6] == 1) {
+                xSprite.setPosition(0, (height / 3) * 2);
+                window.draw(xSprite);
+            }
 
-                if (field[7] > 0) {
-                    xSprite.setPosition(width / 3, (height / 3) * 2);
-                    window.draw(xSprite);
-                }
+            if (field[7] == 1) {
+                xSprite.setPosition(width / 3, (height / 3) * 2);
+                window.draw(xSprite);
+            }
 
-                if (field[8] > 0) {
-                    xSprite.setPosition((width / 3) * 2, (height / 3) * 2);
-                    window.draw(xSprite);
-                }
-            } else if (sign == 2) {
-                if (field[0] > 0) {
-                    oSprite.setPosition(0, 0);
-                    window.draw(oSprite);
-                }
+            if (field[8] == 1) {
+                xSprite.setPosition((width / 3) * 2, (height / 3) * 2);
+                window.draw(xSprite);
+            }
 
-                if (field[1] > 0) {
-                    oSprite.setPosition(width / 3, 0);
-                    window.draw(oSprite);
-                }
+            
 
-                if (field[2] > 0) {
-                    oSprite.setPosition((width / 3) * 2, 0);
-                    window.draw(oSprite);
-                }
+            if (field[0] == 2) {
+                oSprite.setPosition(0, 0);
+                window.draw(oSprite);
+            }
 
-                if (field[3] > 0) {
-                    oSprite.setPosition(0, height / 3);
-                    window.draw(oSprite);
-                }
+            if (field[1] == 2) {
+                oSprite.setPosition(width / 3, 0);
+                window.draw(oSprite);
+            }
 
-                if (field[4] > 0) {
-                    oSprite.setPosition(width / 3, height / 3);
-                    window.draw(oSprite);
-                }
+            if (field[2] == 2) {
+                oSprite.setPosition((width / 3) * 2, 0);
+                window.draw(oSprite);
+            }
 
-                if (field[5] > 0) {
-                    oSprite.setPosition((width / 3) * 2, height / 3);
-                    window.draw(oSprite);
-                }
+            if (field[3] == 2) {
+                oSprite.setPosition(0, height / 3);
+                window.draw(oSprite);
+            }
 
-                if (field[6] > 0) {
-                    oSprite.setPosition(0, (height / 3) * 2);
-                    window.draw(oSprite);
-                }
+            if (field[4] == 2) {
+                oSprite.setPosition(width / 3, height / 3);
+                window.draw(oSprite);
+            }
 
-                if (field[7] > 0) {
-                    oSprite.setPosition(width / 3, (height / 3) * 2);
-                    window.draw(oSprite);
-                }
+            if (field[5] == 2) {
+                oSprite.setPosition((width / 3) * 2, height / 3);
+                window.draw(oSprite);
+            }
 
-                if (field[8] > 0) {
-                    oSprite.setPosition((width / 3) * 2, (height / 3) * 2);
-                    window.draw(oSprite);
-                }
+            if (field[6] == 2) {
+                oSprite.setPosition(0, (height / 3) * 2);
+                window.draw(oSprite);
+            }
+
+            if (field[7] == 2) {
+                oSprite.setPosition(width / 3, (height / 3) * 2);
+                window.draw(oSprite);
+            }
+
+            if (field[8] == 2) {
+                oSprite.setPosition((width / 3) * 2, (height / 3) * 2);
+                window.draw(oSprite);
             }
         }
 
