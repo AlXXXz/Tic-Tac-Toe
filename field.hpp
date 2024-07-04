@@ -5,7 +5,7 @@ class Field : public sf::Drawable {
     sf::RectangleShape background;
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const; 
 
-    sf::CircleShape circle;
+    //sf::CircleShape circle;
 
     sf::RectangleShape line;
     sf::RectangleShape line2;
@@ -15,5 +15,4 @@ class Field : public sf::Drawable {
 public:
     Field();
     void update(sf::Time elapsedTime);
-    void drawField();
 };

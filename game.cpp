@@ -8,11 +8,14 @@ Game::Game() : window(sf::VideoMode(400, 400), "Tic-Tac"), gameField() {
    
 void Game::processEvents() {
     while (window.pollEvent(event)) {
-        switch (event.type){
-			case sf::Event::Closed:
-				window.close();
-				break;
-		}
+        if (event.type == sf::Event::Closed || event.key.code == sf::Keyboard::Escape)
+            window.close();
+
+        // switch (event.type){
+		// 	case sf::Event::Closed:
+		// 		window.close();
+		// 		break;
+		// }
     }
 }
 
