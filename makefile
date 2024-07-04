@@ -1,13 +1,19 @@
-LIBS=-lsfml-window -lsfml-graphics -lsfml-system
-NAME=tic-tac
+CC=g++
+PROJECT=tic-tac-toe
+SRC=main.cpp game.cpp field.cpp
+OBJ=$(SRC:.cpp=.o)
+SFML_FLAGS=-lsfml-graphics -lsfml-window -lsfml-system
 
-all: $(NAME)
+.PHONY: all
 
-$(NAME): main.o 
-	g++ main.o $(LIBS) -o $(NAME)
+all: $(SRC) $(PROJECT)
+	rm *.o
 
-main.o: main.cpp
-	g++ -c main.cpp -o main.o 
+$(PROJECT): $(OBJ)
+	$(CC) $(OBJ) -o $(PROJECT) $(SFML_FLAGS)
 
-clean: 
-	rm main.o $(NAME)
+.cpp.o:
+	$(CC) -c -Wall $< -o $@
+
+clean:
+	rm $(PROJECT)
